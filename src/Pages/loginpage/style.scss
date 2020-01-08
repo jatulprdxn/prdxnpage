@@ -1,22 +1,32 @@
+
+body {
+  background-image: url('./images/na.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 form {
-  width: 44%;
+  width: 55%;
+  padding: 100px 0 100px 50px;
+  border-radius: 10px;
   margin: 0 auto;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.4);
+  background:linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
 }
 
-label {
-  font-size: 30px;
-}
+label {font-size: 30px; }
+.username { margin-bottom: 50px; }
 
-.username {
-  margin-bottom: 50px;
-}
-
-input {
-  width: 65%;
+input[type="text"], input[type="password"] {
+  width: 54%;
   padding: 6px 0px 5px 0px;
   border: none;
   border-bottom: 2px solid #555;
   box-sizing: border-box;
+  background: transparent;
+  font-size: 18px;
+  color: #fff;
+  font-family: Poppins-Bold;
   outline: none;
   vertical-align: bottom;
 
@@ -26,35 +36,134 @@ input {
   } 
 }
 
-input[type=submit] {
+.submit {
   width: 25%;
-  padding: 10px 15px 10px 15px;
-  border: 2px solid #00FFFF;
-  margin-left: 10px;
-  color: #fff;
-  background-color: #00FFFF;
+  margin:20px auto 0;
   cursor: pointer;
-  font-size: 16px;
   text-transform: uppercase;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
 
-  &:hover {
+
+input {
+   width: 100%;
+   padding: 10px 15px 10px 15px;
+   border: 2px solid #00FFFF;
+   border-radius: 10px;
+   background: #00FFFF;
+   color: #fff;
+   cursor: pointer;
+   font-size: 16px;
+   outline: none;
+   text-transform: uppercase;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   transition:all ease-in .3s;
+   -webkit-transition:all ease-in .3s;
+   -moz-transition:all ease-in .3s;
+   -ms-transition:all ease-in .3s;
+   -o-transition:all ease-in .3s;
+
+   &:hover {
     background-color: #fff;
     color: #00FFFF;
   }
+
+  }
+
 }
 
 
 .password {
+position: relative;
 
- position: relative; 
+label { padding-left:5px; }
+input[type="password"] { 
+  width: 54.5%; 
+}
 
-label { padding-left: 6px; }
-input { width: 65.5%; }
+span {
+  padding-right: 5px;
+  margin-top: 12px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  color: #21d4fd;
+  cursor: pointer;
+  font-size: 15px;
+  top: 0;
+  right: 22%;
+}
 
 .password-icon {
-  position: absolute;
-  top: 12px;
-  right: 32px
+  display: inline-block;
+
+  &::before {
+    content: '\f06e'
+  }
 }
 
 }
+
+//media query start here 
+@media screen and (max-width: 995px) {
+
+  header {
+    text-align: center;
+  }
+
+  input[type="text"] { width:80%; }
+ .password input[type="password"] { width:80.5%; } 
+ .submit  { width: 30%; }
+
+ .password {
+  span {
+    margin-top: 40px;
+    right: 19%
+  }
+ }
+ 
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    padding-right: 50px;
+
+    label {
+      margin-bottom: 10px;
+      display: inline-block;
+      font-size: 20px;
+    }
+   
+     input[type="text"] { width:99%; }
+    .password input[type="password"] { width:99.5%; } 
+    .submit  { width: 40%; }
+   } 
+
+   .password {
+     span {
+       margin-top: 40px;
+       right: 0
+     }
+   }
+  }
+ 
+@media screen and (max-width: 540px) { 
+  .submit  { 
+    width: 50%;
+    input {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .submit input { padding: 10px 7px 10px 7px }
+}
+
+
